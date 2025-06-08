@@ -9,7 +9,13 @@
 <body>
     <div class="container">
         <h1>FocusBooster</h1>
-        <div id="timer-display">25:00</div>
+        <div class="timer-wrapper">
+            <svg id="progress-ring" class="progress-ring" width="200" height="200">
+                <circle class="progress-ring__background" r="90" cx="100" cy="100" />
+                <circle id="progress-ring-circle" class="progress-ring__circle" r="90" cx="100" cy="100" />
+            </svg>
+            <div id="timer-display">25:00</div>
+        </div>
         <div class="buttons">
             <button id="start-button">スタート</button>
             <button id="pause-button">一時停止</button>

@@ -89,3 +89,40 @@ h1 {
     font-style: italic;
     color: #6c757d;
 }
+
+.timer-wrapper {
+    position: relative; /* For positioning timer-display on top of SVG */
+    width: 200px; /* Same as SVG width */
+    height: 200px; /* Same as SVG height */
+    margin: 0 auto 20px; /* Center the wrapper and add some bottom margin */
+}
+
+#timer-display { /* Adjusted to be positioned over the SVG */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem; /* Slightly smaller to fit well within the circle */
+    font-weight: bold;
+    color: #28a745;
+    /* Remove margin-bottom as it's now on timer-wrapper */
+}
+
+.progress-ring {
+    transform: rotate(-90deg); /* Start the progress from the top */
+}
+
+.progress-ring__background {
+    fill: transparent;
+    stroke: #e6e6e6; /* Light grey for the background track */
+    stroke-width: 10;
+}
+
+.progress-ring__circle {
+    fill: transparent;
+    stroke: #28a745; /* Green for the progress, same as timer text */
+    stroke-width: 10;
+    stroke-linecap: round; /* Makes the line ends rounded */
+    transition: stroke-dashoffset 0.35s; /* Smooth transition for the progress */
+    /* stroke-dasharray and stroke-dashoffset will be set by JavaScript */
+}

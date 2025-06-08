@@ -2,6 +2,7 @@
 console.log("FocusBooster script loaded!");
 
 // Basic DOM elements (will be expanded later)
+const notificationSound = new Audio('assets/notification.mp3'); // 通知音のAudioオブジェクト
 const timerDisplay = document.getElementById('timer-display');
 const startButton = document.getElementById('start-button');
 const pauseButton = document.getElementById('pause-button');
@@ -63,6 +64,7 @@ function startTimer() {
             currentTimeInSeconds = (isWorkSession ? parseInt(workDurationInput.value) : parseInt(breakDurationInput.value)) * 60;
             statusMessage.textContent = isWorkSession ? "作業時間です！" : "休憩時間です！";
             // Optionally, play a sound here
+            notificationSound.play().catch(error => console.error("Audio play failed:", error)); // 通知音を再生
             alert(isWorkSession ? "休憩終了！作業を開始します。" : "作業終了！休憩に入ります。");
             isTimerRunning = false; // Reset before starting next session
             startTimer(); // Automatically start the next session

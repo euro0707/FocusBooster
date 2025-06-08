@@ -64,6 +64,7 @@ function startTimer() {
             statusMessage.textContent = isWorkSession ? "作業時間です！" : "休憩時間です！";
             // Optionally, play a sound here
             alert(isWorkSession ? "休憩終了！作業を開始します。" : "作業終了！休憩に入ります。");
+            isTimerRunning = false; // Reset before starting next session
             startTimer(); // Automatically start the next session
         }
     }, 1000);

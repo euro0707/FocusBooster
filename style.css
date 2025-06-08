@@ -126,3 +126,20 @@ h1 {
     transition: stroke-dashoffset 0.35s; /* Smooth transition for the progress */
     /* stroke-dasharray and stroke-dashoffset will be set by JavaScript */
 }
+
+.status-container {
+    display: flex;
+    align-items: center; /* Vertically align items in the middle */
+    justify-content: flex-end; /* Horizontally align items to the end (right) */
+    margin-top: 20px; /* Add some space above */
+}
+
+#status-message {
+    margin-right: 10px; /* Add some space between message and logo */
+}
+
+#expo-logo {
+    width: 80px; /* Adjust width as needed, e.g., smaller for inline display */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0.9; /* Optional: adjust opacity */
+}
